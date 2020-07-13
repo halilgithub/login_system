@@ -17,7 +17,7 @@ You can also login as normal user and take these actions:
 ## usage
 
 **Main Login Panel:**
-![alt text](https://github.com/halilgithub/login_system/screen_shots/main_window.png "Main Login Panel")
+![alt text](https://github.com/halilgithub/login_system/blob/master/screen_shots/main_window.png "Main Login Panel")
 
 ## copyright and license
 This project is under the MIT License.
