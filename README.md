@@ -1,5 +1,5 @@
 # login_system
-A sample **Login System** developed with PyQt5 library and Python.
+I developed a sample **Login System** with PyQt5 library and Python.
 Everything is kept in txt files, no database is used.
 I will it improve it and add new features in the near futures.
 
