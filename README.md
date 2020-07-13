@@ -18,6 +18,7 @@ You can also login as normal user and take these actions:
 
 | **Main Login Panel:** |
 |:--:| 
+
 | [alt text](https://github.com/halilgithub/login_system/blob/master/screen_shots/main_window.png "Main Login Panel") | 
 
 
