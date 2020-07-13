@@ -4,7 +4,8 @@ from datetime import datetime
 from user import User
 import sys
 
-def show_warning(message_text,informative_text):
+
+def show_warning(message_text, informative_text):
     msg = QMessageBox()
     msg.setIcon(QMessageBox.Warning)
     msg.setText(message_text)
@@ -12,13 +13,15 @@ def show_warning(message_text,informative_text):
     msg.setWindowTitle("Warning")
     msg.exec_()
 
-def show_information(message_text,informative_text=None):
+
+def show_information(message_text, informative_text=''):
     msg = QMessageBox()
     msg.setIcon(QMessageBox.Information)
     msg.setText(message_text)
     msg.setInformativeText(informative_text)
     msg.setWindowTitle("Information")
     msg.exec_()
+
 
 def show_last_seen(userid):
     last_seen = 'No log yet'
@@ -29,8 +32,9 @@ def show_last_seen(userid):
                 last_seen = line[1] + '  ' + line[2]
     return last_seen
 
+
 class AdminPanel(QDialog):
-    def __init__(self, parent = None):
+    def __init__(self, parent=None):
         super(AdminPanel, self).__init__(parent)
         uic.loadUi("ui/admin_panel.ui", self)
         self.tabs.setCurrentWidget(self.tabs.findChild(QWidget, 'users'))
@@ -38,27 +42,33 @@ class AdminPanel(QDialog):
         self.handle_buttons()
 
     def handle_buttons(self):
-        self.logoutButton.clicked.connect(self.admin_logout)
+        self.refreshButton.clicked.connect(self.fill_user_table)
         self.addButton.clicked.connect(self.add_user)
         self.finduserButton.clicked.connect(self.find_user)
         self.updateuserButton.clicked.connect(self.update_user)
         self.deleteuserButton.clicked.connect(self.delete_user)
+        self.logoutButton.clicked.connect(self.admin_logout)
 
     def fill_user_table(self):
+        for i in reversed(range(self.usertable.rowCount())):
+            self.usertable.removeRow(i)
         with open('txt/user_tracks.txt', 'r') as file:
             line = file.readline()
             row_count = 0
             while line:
                 self.usertable.insertRow(row_count)
                 line = line.split()
-                self.usertable.setItem(row_count,0,QTableWidgetItem(line[0]))
-                self.usertable.setItem(row_count,1,QTableWidgetItem(line[1]))
-                self.usertable.setItem(row_count,2,QTableWidgetItem(line[2]))
-                self.usertable.setItem(row_count,3,QTableWidgetItem(line[3]))
-                self.usertable.setItem(row_count,4,QTableWidgetItem(show_last_seen(line[0])))
+                self.usertable.setItem(row_count, 0, QTableWidgetItem(line[0]))
+                self.usertable.setItem(row_count, 1, QTableWidgetItem(line[1]))
+                self.usertable.setItem(row_count, 2, QTableWidgetItem(line[2]))
+                self.usertable.setItem(row_count, 3, QTableWidgetItem(line[3]))
+                self.usertable.setItem(row_count, 4, QTableWidgetItem(show_last_seen(line[0])))
                 line = file.readline()
                 row_count += 1
         self.usertable.verticalHeader().setVisible(False)
+        header = self.usertable.horizontalHeader()
+        header.setSectionResizeMode(QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
 
     def add_user(self):
         email = self.addemail.text()
@@ -73,6 +83,8 @@ class AdminPanel(QDialog):
         with open('txt/user_tracks.txt', 'a') as f:
             f.write(user.printout())
             f.write('\n')
+        message_text = "User has been added"
+        show_information(message_text)
 
     def find_user(self):
         email = self.findbyemail.text()
@@ -87,7 +99,7 @@ class AdminPanel(QDialog):
 
     def update_user(self):
         email = self.findbyemail.text()
-        with open("txt/user_tracks.txt","r+") as f:
+        with open("txt/user_tracks.txt", "r+") as f:
             new_f = f.readlines()
             f.seek(0)
             for line in new_f:
@@ -105,7 +117,7 @@ class AdminPanel(QDialog):
 
     def delete_user(self):
         email = self.findbyemail.text()
-        with open("txt/user_tracks.txt","r+") as f1:
+        with open("txt/user_tracks.txt", "r+") as f1:
             new_f = f1.readlines()
             f1.seek(0)
             for line in new_f:
@@ -128,7 +140,7 @@ class AdminPanel(QDialog):
 
 
 class UserPanel(QDialog):
-    def __init__(self, info_list, parent = None):
+    def __init__(self, info_list, parent=None):
         super(UserPanel, self).__init__(parent)
         uic.loadUi("ui/user_panel.ui", self)
         self.userid = info_list[0]
@@ -146,7 +158,7 @@ class UserPanel(QDialog):
         self.logoutButton.clicked.connect(self.user_logout)
 
     def customize_user_panel(self):
-        self.setWindowTitle('{} {} logged in'.format(self.first,self.last))
+        self.setWindowTitle('{} {} logged in'.format(self.first, self.last))
         self.wellcomemessage.setText('Welcome {}'.format(self.first))
         self.lastseenvalue.setText(show_last_seen(self.userid))
 
@@ -171,7 +183,7 @@ class UserPanel(QDialog):
             self.newpass.setText('')
             return
         else:
-            with open("txt/user_tracks.txt","r+") as f:
+            with open("txt/user_tracks.txt", "r+") as f:
                 new_f = f.readlines()
                 f.seek(0)
                 for line in new_f:
@@ -186,8 +198,7 @@ class UserPanel(QDialog):
                 f.truncate()
             self.password_changed = True
             message_text = "Password has been changed"
-            informative_text = ''
-            show_information(message_text, informative_text)
+            show_information(message_text)
             self.newpass.setText('')
             return
 

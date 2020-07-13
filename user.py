@@ -12,7 +12,7 @@ class User:
             f.seek(0)
             f.write(str(self.userID))
             f.truncate()
-        print('{} nolu kullanici yaratildi'.format(self.userID))
+        print('User with id:{} has been created'.format(self.userID))
 
     def printout(self):
         return '{} {} {} {} {}'.format(self.userID, self.first, self.last, self.email, self.password)

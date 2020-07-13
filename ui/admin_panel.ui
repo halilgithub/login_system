@@ -63,9 +63,9 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>10</y>
-       <width>652</width>
-       <height>331</height>
+       <y>49</y>
+       <width>631</width>
+       <height>291</height>
       </rect>
      </property>
      <property name="rowCount">
@@ -99,6 +99,19 @@
        <string>Last Seen</string>
       </property>
      </column>
+    </widget>
+    <widget class="QPushButton" name="refreshButton">
+     <property name="geometry">
+      <rect>
+       <x>478</x>
+       <y>10</y>
+       <width>121</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Refresh</string>
+     </property>
     </widget>
    </widget>
    <widget class="QWidget" name="adduser">
