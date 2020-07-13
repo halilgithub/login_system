@@ -19,8 +19,10 @@ You can also login as normal user and take these actions:
 <pre>
 Execute the program from command line:
 
-    python main.py
 </pre>
+```console
+foo@bar:~$ python main.py
+```
 
 | **Main Login Panel:** |
 |:----:|
