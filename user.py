@@ -6,9 +6,9 @@ class User:
         self.password = password
         self.first = first
         self.last = last
-        with open('txt/user_count.txt', 'r+') as f:
-            user_count = int(f.read())
-            self.userID = user_count + 1
+        with open('txt/userid_count.txt', 'r+') as f:
+            userid_count = int(f.read())
+            self.userID = userid_count + 1
             f.seek(0)
             f.write(str(self.userID))
             f.truncate()

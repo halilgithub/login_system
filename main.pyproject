@@ -1,3 +1,3 @@
 {
-    "files": ["user.py","main.py","txt/user_tracks.txt","txt/log_tracks.txt","ui/admin_panel.ui","ui/mainwindow.ui","ui/user_panel.ui","txt/user_count.txt","txt/deletion_tracks.txt"]
+    "files": ["user.py","main.py","txt/user_tracks.txt","txt/log_tracks.txt","ui/admin_panel.ui","ui/mainwindow.ui","ui/user_panel.ui","txt/userid_count.txt","txt/deletion_tracks.txt"]
 }
