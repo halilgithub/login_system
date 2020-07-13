@@ -16,10 +16,9 @@ You can also login as normal user and take these actions:
   
 ## usage
 
+| [alt text](https://github.com/halilgithub/login_system/blob/master/screen_shots/main_window.png "Main Login Panel") |
+|:--:|
 | **Main Login Panel:** |
-|:--:| 
-
-| [alt text](https://github.com/halilgithub/login_system/blob/master/screen_shots/main_window.png "Main Login Panel") | 
 
 
 ## copyright and license
