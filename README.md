@@ -16,10 +16,8 @@ You can also login as normal user and take these actions:
 
 ## usage
 
-<pre>
 Execute the program from command line:
 
-</pre>
 ```console
 foo@bar:~$ python main.py
 ```
