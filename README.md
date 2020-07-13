@@ -21,7 +21,7 @@ You can also login as normal user and take these actions:
 | ![Login Panel](https://github.com/halilgithub/login_system/blob/master/screen_shots/main_window.png "Main Login Panel") |
 
 <pre>
-This the credentials for admin:
+This is the credentials for admin:
     email:     admin  
     password:  admin
 </pre>
@@ -30,10 +30,12 @@ This the credentials for admin:
 |:----:|
 | ![Admin panel](https://github.com/halilgithub/login_system/blob/master/screen_shots/admin_panel.png "Admin Panel") |
 
-These are credentials for some normal users:  
-  + email: Leighann@Spainhour.com + password: 1234  
-  + email: Jonathon@Hatcher.com + password: 1234  
-  + email: Granville@Lehman.com + password: 1234  
+<pre>
+These are some credentials for normal users:
+    email: Leighann@Spainhour.com    password: 1234  
+    email: Jonathon@Hatcher.com      password: 1234  
+    email: Granville@Lehman.com      password: 1234
+</pre>
     
 | **User Panel:** |
 |:----:|
