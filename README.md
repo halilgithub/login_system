@@ -9,7 +9,7 @@ It functions well however I am improving it day by day.
 I am adding new features and resolving potential defects continuously.
 I am trying to enhance not only implementation but also design at the same time.
 Reaching out a more object-oriented and pythonic design.
-I am not done yet...
+I am not done yet.
 
 ## features
 
