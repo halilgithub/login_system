@@ -5,10 +5,9 @@ I developed a sample **Login System** with Python and PyQt5 library.
 
 Everything is kept in txt files, no database is used.
 Tested in Ubuntu 20.4 and Windows 10 successfully.
-It functions well however I am improving it day by day.
-I am adding new features and resolving potential defects continuously.
+It functions well however I can add new features and will resolve potential defects continuously.
 I am trying to enhance not only implementation but also design at the same time.
-Reaching out a more object-oriented and pythonic design.
+Reaching out a more object-oriented and pythonic design...
 
 ## features
 
